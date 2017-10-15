@@ -1,0 +1,244 @@
+[gd_scene load_steps=3 format=1]
+
+[ext_resource path="res://astar.gd" type="Script" id=1]
+[ext_resource path="res://UI.gd" type="Script" id=2]
+
+[node name="main" type="Node"]
+
+[node name="Control" type="Control" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 40.0
+margin/bottom = 40.0
+script/script = ExtResource( 1 )
+tileWidth = 32
+tileHeight = 32
+rows = 16
+columns = 8
+
+[node name="UI" type="Container" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -65.0
+margin/top = -160.0
+margin/right = -25.0
+margin/bottom = -120.0
+script/script = ExtResource( 2 )
+
+[node name="start" type="HSlider" parent="UI"]
+
+editor/display_folded = true
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 87.0
+margin/top = 189.0
+margin/right = 171.0
+margin/bottom = 205.0
+range/min = 0.0
+range/max = 127.0
+range/step = 1.0
+range/page = 0.0
+range/value = 1.0
+range/exp_edit = false
+range/rounded = false
+tick_count = 0
+ticks_on_borders = true
+focus_mode = 2
+
+[node name="Label" type="Label" parent="UI/start"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = -10.0
+margin/right = 40.0
+margin/bottom = 4.0
+text = "Start"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Start" type="Label" parent="UI/start"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 91.0
+margin/top = 0.0
+margin/right = 131.0
+margin/bottom = 14.0
+text = "10"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="end" type="HSlider" parent="UI"]
+
+editor/display_folded = true
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 87.0
+margin/top = 219.0
+margin/right = 171.0
+margin/bottom = 235.0
+range/min = 0.0
+range/max = 127.0
+range/step = 1.0
+range/page = 0.0
+range/value = 1.0
+range/exp_edit = false
+range/rounded = false
+tick_count = 0
+ticks_on_borders = true
+focus_mode = 2
+
+[node name="Label" type="Label" parent="UI/end"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = -10.0
+margin/right = 40.0
+margin/bottom = 4.0
+text = "End"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="End" type="Label" parent="UI/end"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 91.0
+margin/top = 0.0
+margin/right = 131.0
+margin/bottom = 14.0
+text = "10"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="obstacles" type="HSlider" parent="UI"]
+
+editor/display_folded = true
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 87.0
+margin/top = 289.0
+margin/right = 171.0
+margin/bottom = 305.0
+range/min = 0.0
+range/max = 127.0
+range/step = 1.0
+range/page = 0.0
+range/value = 1.0
+range/exp_edit = false
+range/rounded = false
+tick_count = 0
+ticks_on_borders = true
+focus_mode = 2
+
+[node name="obstacles" type="Label" parent="UI/obstacles"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = -10.0
+margin/right = 40.0
+margin/bottom = 4.0
+text = "Add Obstacle"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="position" type="Label" parent="UI/obstacles"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 91.0
+margin/top = 0.0
+margin/right = 131.0
+margin/bottom = 14.0
+text = "10"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="StartPath" type="Button" parent="UI"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 83.0
+margin/top = 241.0
+margin/right = 120.0
+margin/bottom = 261.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "GO!"
+flat = false
+
+[node name="AddObstacle" type="Button" parent="UI"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 83.0
+margin/top = 311.0
+margin/right = 120.0
+margin/bottom = 331.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "ADD"
+flat = false
+
+[node name="LineEdit" type="LineEdit" parent="UI"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 205.0
+margin/top = 282.0
+margin/right = 263.0
+margin/bottom = 306.0
+text = "10"
+placeholder/alpha = 0.6
+focus_mode = 2
+caret/caret_blink = false
+caret/caret_blink_speed = 0.65
+
+[connection signal="pressed" from="UI/StartPath" to="Control" method="_on_StartPath_pressed"]
+
+[connection signal="pressed" from="UI/AddObstacle" to="Control" method="_on_AddObstacle_pressed"]
+
+
